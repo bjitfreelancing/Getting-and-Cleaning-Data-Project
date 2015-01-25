@@ -57,7 +57,7 @@ testData = cbind(yTest,subjectTest,xTest);
 
 # Combine training and test data to create a final data set
 finalData = rbind(trgData,testData);
-View(finalData)
+#View(finalData)
 
 colNames  = colnames(finalData); 
 
@@ -109,7 +109,7 @@ tidyData    = aggregate(finalDataNoActivityLbl[,names(finalDataNoActivityLbl) !=
 
 # Merging the tidyData with activityType to include descriptive acitvity names
 tidyData    = merge(tidyData,activityLabels,by='activityId',all.x=TRUE);
-
+View(tidyData)
 # Export the tidyData set 
-write.table(tidyData, './tidyData.txt',row.names=TRUE,sep='\t');
+write.table(tidyData, './tidyData.txt',row.names=FALSE,sep='\t');
 
